@@ -1,0 +1,76 @@
+{
+  "_comment": "Field names in the bank's systems (illustrative). The Salesforce custom fields marked s2l_* are ones this tool would create; rename to whatever RevOps prefers.",
+
+  "hubspot": {
+    "portal_id": "12345678",
+    "form_id": "00000000-0000-0000-0000-000000000000",
+    "inbound_type": "inbound_type",
+    "lead_source": "leadsource",
+    "conversion_page": "signup_conversion_page",
+    "salesforce_inclusion": "salesforce_inclusion",
+    "submission_page": "submission_page",
+    "utm": ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "utm_ref"],
+    "standard": {"email": "email", "first": "firstname", "last": "lastname", "company": "company", "phone": "phone", "website": "website"},
+    "writeback": {
+      "score": "s2l_score",
+      "tier": "s2l_tier",
+      "owner": "s2l_owner",
+      "sla_result": "s2l_sla_result",
+      "first_touch_at": "s2l_first_touch_at",
+      "auto_touch_at": "s2l_auto_touch_at",
+      "seconds_to_first_touch": "s2l_seconds_to_first_touch"
+    }
+  },
+
+  "salesforce": {
+    "api_version": "v60.0",
+    "object": "Lead",
+    "standard": {"id": "Id", "email": "Email", "first": "FirstName", "last": "LastName", "company": "Company", "phone": "Phone", "lead_source": "LeadSource", "status": "Status", "owner_id": "OwnerId"},
+    "custom_in": {
+      "_comment": "Likely names for the HubSpot hidden fields once synced to Salesforce. Confirm with RevOps.",
+      "inbound_type": "Inbound_Type__c",
+      "conversion_page": "Signup_Conversion_Page__c"
+    },
+    "writeback": {
+      "score": "S2L_Score__c",
+      "tier": "S2L_Tier__c",
+      "sla_result": "S2L_SLA_Result__c",
+      "first_touch_at": "S2L_First_Touch_At__c",
+      "auto_touch_at": "S2L_Auto_Touch_At__c",
+      "seconds_to_first_touch": "S2L_Seconds_To_First_Touch__c",
+      "miss_reason": "S2L_Miss_Reason__c"
+    },
+    "task": {"type_call": "Call", "type_email": "Email", "status_done": "Completed"}
+  },
+
+  "inbound_type_values": ["Bottom Funnel - Warm", "Hand Raiser", "Contact Sales", "Self-Serve Signup", "Partner Referral", "Marketing Lead"],
+
+  "conversion_page_hints": {
+    "_comment": "Signup Conversion Page value -> what it tells us. Prefix match, case-insensitive.",
+    "mercury competitor": {"current_provider": "mercury", "intent": "switch"},
+    "ramp competitor": {"current_provider": "ramp", "intent": "switch"},
+    "bill.com competitor": {"intent": "open_account", "product_interest": "ap"},
+    "navan": {"intent": "card", "product_interest": "expense"},
+    "treasury": {"intent": "treasury"},
+    "corporate cards": {"intent": "card"},
+    "accounts payable": {"intent": "open_account", "product_interest": "ap"},
+    "expense management": {"intent": "card", "product_interest": "expense"},
+    "startup banking": {"intent": "open_account", "stage": "pre_seed"},
+    "direct signup": {"intent": "open_account"},
+    "contact sales": {"intent": "demo"},
+    "sales meeting form": {"intent": "demo"},
+    "for accountants": {"multi_client": true, "intent": "demo"},
+    "for fractional cfos": {"multi_client": true, "intent": "demo"},
+    "pricing": {"intent": "demo"},
+    "construction": {"industry": "construction", "stage": "revenue_smb"},
+    "healthcare": {"industry": "healthcare", "stage": "revenue_smb"},
+    "professional services": {"industry": "agency", "stage": "revenue_smb"},
+    "private equity": {"industry": "pe_backed", "stage": "revenue_smb"},
+    "technology": {"industry": "saas"},
+    "gusto": {"intent": "open_account", "stage": "revenue_smb"},
+    "justworks referral": {"referral": true, "intent": "open_account"},
+    "nerd wallet": {"intent": "open_account", "stage": "revenue_smb"},
+    "capterra": {"intent": "demo", "stage": "revenue_smb"},
+    "g2": {"intent": "demo"}
+  }
+}

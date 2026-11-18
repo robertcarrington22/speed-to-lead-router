@@ -1,0 +1,20 @@
+{
+  "timezone_offset_hours": -4,
+  "business_hours": {"start": 9, "end": 18, "days": [0, 1, 2, 3, 4]},
+  "sla_seconds": {
+    "auto_touch": 60,
+    "escalate": 180,
+    "human_touch": 300
+  },
+  "owners": {
+    "smb_rep": {"name": "Robert", "slack": "@robert", "phone": "+12125550100"},
+    "backup": {"name": "Backup rep", "slack": "@growth-oncall", "phone": "+12125550101"},
+    "closers": [
+      {"name": "Closer 1", "slack": "@closer1", "calendar": "https://cal.example/closer1"},
+      {"name": "Closer 2", "slack": "@closer2", "calendar": "https://cal.example/closer2"}
+    ]
+  },
+  "booking_link": "https://cal.example/robert/20min",
+  "crm_base_url": "https://crm.example/leads/",
+  "after_hours_policy": "auto_touch_and_book_callback"
+}

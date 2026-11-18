@@ -1,0 +1,84 @@
+{
+  "_comment": "Additive, transparent rubric. Every point is explainable to a founder or a VP. Edit weights here, never in code.",
+  "balance_band": {
+    "unknown": 5,
+    "lt_25k": 0,
+    "25k_100k": 15,
+    "100k_500k": 30,
+    "500k_plus": 40
+  },
+  "stage": {
+    "unknown": 5,
+    "pre_ein": 5,
+    "pre_seed": 10,
+    "seed": 20,
+    "series_a_plus": 25,
+    "revenue_smb": 15
+  },
+  "intent": {
+    "unknown": 5,
+    "content": 5,
+    "free_tool": 5,
+    "open_account": 15,
+    "application_abandoned": 15,
+    "demo": 20,
+    "treasury": 20,
+    "opened_not_funded": 20,
+    "card": 15,
+    "switch": 25
+  },
+  "current_provider": {
+    "unknown": 5,
+    "none": 5,
+    "legacy_bank": 10,
+    "mercury": 10,
+    "ramp": 10,
+    "brex": 15
+  },
+  "inbound_type": {
+    "_comment": "The bank's own hidden-field taxonomy. Only scored when the value is present; synthetic leads without it get 0 here.",
+    "Bottom Funnel - Warm": 30,
+    "Hand Raiser": 25,
+    "Contact Sales": 25,
+    "Self-Serve Signup": 15,
+    "Partner Referral": 20,
+    "Marketing Lead": 5
+  },
+  "lead_source": {
+    "Calendly": 15,
+    "Upsell": 15,
+    "Referral": 10,
+    "Partner Inbound": 10,
+    "Intercom": 10,
+    "Inbound": 10,
+    "Partner": 5,
+    "Events": 5,
+    "Warm Outbound": 5,
+    "Cold Outbound": 0,
+    "SDR": 0,
+    "Social": 0,
+    "Paid Influencers": 0,
+    "Sponsorships": 0,
+    "Promotions": 0
+  },
+  "bonuses": {
+    "multi_client_partner": 25,
+    "referral": 10,
+    "phone_provided": 5,
+    "booked_call_requested": 10
+  },
+  "disqualify": {
+    "entity_types": ["sole_prop"],
+    "countries_not": ["US"],
+    "industries": ["crypto_exchange", "cannabis", "adult", "gambling", "msb"]
+  },
+  "tiers": {
+    "A": 70,
+    "B": 40,
+    "C": 0
+  },
+  "closer_handoff": {
+    "_comment": "Tier A leads at or above this balance band go to the closing team; below it Robert closes them himself.",
+    "min_balance_band": "100k_500k"
+  }
+}
